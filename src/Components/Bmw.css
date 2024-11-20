@@ -1,0 +1,74 @@
+.Carsvg {
+  position: absolute;
+  z-index: 1;
+  overflow-x: hidden;
+  float: left;
+  display: none;
+}
+
+#body {
+  fill: #a6a6a6;
+  float: left;
+  /* fill: linear-gradient(to bottom, #dbdbdb, #f9f9f9, #dbdbdb); */
+}
+
+#WheelRear,
+#WheelFront {
+  animation: spin 3.4s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.play {
+  animation: move 3s ease-out forwards;
+  height: 72px;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(2220px);
+    display: none;
+  }
+}
+
+#indicator {
+  animation: blinker 0.5s forwards 10;
+  animation-delay: 4s;
+  animation-duration: 0.3s;
+
+  fill: #d9d9d9;
+}
+
+@keyframes blinker {
+  50% {
+    fill: rgb(191, 66, 13);
+  }
+}
+
+#Rearlight {
+  animation: back 0.4s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  opacity: 60%;
+  fill: #c41e3a;
+}
+
+@keyframes back {
+  100% {
+    fill: #ff3131;
+    opacity: 100%;
+  }
+}
