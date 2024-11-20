@@ -15,10 +15,17 @@ const cors = require("cors");
 const { sync } = require("motion");
 const corsOptions = {
   orgin: [process.env.FRONTEND_URL],
+  methods: "GET,POST",
 };
 
 app.use(cors(corsOptions));
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello from server",
+  });
+});
 
 app.post("/", async (req, res) => {
   const Person = req.body;
@@ -33,4 +40,4 @@ app.post("/", async (req, res) => {
   });
 });
 
-app.listen(PORT, () => console.log(`Server Started at PORT : ${PORT}`));
+// app.listen(PORT, () => console.log(`Server Started at PORT : ${PORT}`));
