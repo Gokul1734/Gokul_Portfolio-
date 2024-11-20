@@ -14,7 +14,7 @@ connectMongo(process.env.MongoDbUrl);
 const cors = require("cors");
 const { sync } = require("motion");
 const corsOptions = {
-  orgin: ["https://gokul-portfolio-six.vercel.app"],
+  orgin: [process.env.FRONTEND_URL],
 };
 
 app.use(cors(corsOptions));
