@@ -15,7 +15,7 @@ const cors = require("cors");
 const { sync } = require("motion");
 const corsOptions = {
   orgin: [process.env.FRONTEND_URL],
-  methods: "GET,POST",
+  methods: ["GET", "POST"],
 };
 
 app.use(cors(corsOptions));
