@@ -60,7 +60,7 @@ const Form = (props) => {
               alert("Please fill all the fields");
             } else {
               try {
-                axios.post("http://localhost:8200", {
+                axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/`, {
                   Name: name,
                   Email: mail,
                   Message: message,
