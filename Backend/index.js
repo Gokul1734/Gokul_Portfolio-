@@ -21,6 +21,13 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello from server",
+  });
+});
+
 app.post("/", async (req, res) => {
   const Person = req.body;
   const { Name, Email, Message } = Person;
