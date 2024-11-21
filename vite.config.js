@@ -13,5 +13,8 @@ export default defineConfig({
     },
   },
 });
+<<<<<<< HEAD
 
 //https://gokul-portfolio-q5jqerma5-gokuls-projects-5ac84439.vercel.app
+=======
+>>>>>>> d2e3bbf1fc577b3e1147376e1f9981ebaa63a380

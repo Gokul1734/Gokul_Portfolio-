@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { PiPerson } from "react-icons/pi";
 import { BiSend } from "react-icons/bi";
 import { SiTicktick } from "react-icons/si";
-import { getDatabase, ref, set } from "firebase/database";
+import { ref, set } from "firebase/database";
 import db from "../../firbase";
 
 const Form = (props) => {
@@ -66,6 +66,7 @@ const Form = (props) => {
                   Email: mail,
                   Message: message,
                 });
+
                 setSendButton(<SiTicktick id="sendIcon" size={30} />);
                 setColour("bg-none bg-green-600");
                 setMsg("Sent");
