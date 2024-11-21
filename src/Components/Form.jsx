@@ -61,7 +61,7 @@ const Form = (props) => {
               alert("Please fill all the fields");
             } else {
               try {
-                set(ref(db, `/Viewers/${name}`), {
+                set(ref(db, `/Viewers/${mail}`), {
                   Name: name,
                   Email: mail,
                   Message: message,
