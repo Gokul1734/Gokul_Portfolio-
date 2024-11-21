@@ -1,7 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://gokul-portfolio-backend.vercel.app",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""), // Optional rewrite
+      },
+    },
+  },
+});
+
+//https://gokul-portfolio-q5jqerma5-gokuls-projects-5ac84439.vercel.app

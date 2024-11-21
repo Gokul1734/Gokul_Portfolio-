@@ -3,7 +3,8 @@ import { motion } from "motion/react";
 import { PiPerson } from "react-icons/pi";
 import { BiSend } from "react-icons/bi";
 import { SiTicktick } from "react-icons/si";
-import axios from "axios";
+import { getDatabase, ref, set } from "firebase/database";
+import db from "../../firbase";
 
 const Form = (props) => {
   const [sendButton, setSendButton] = useState(
@@ -60,7 +61,7 @@ const Form = (props) => {
               alert("Please fill all the fields");
             } else {
               try {
-                axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/`, {
+                set(ref(db, `/Viewers/${name}`), {
                   Name: name,
                   Email: mail,
                   Message: message,
@@ -68,7 +69,6 @@ const Form = (props) => {
                 setSendButton(<SiTicktick id="sendIcon" size={30} />);
                 setColour("bg-none bg-green-600");
                 setMsg("Sent");
-                location.reload();
               } catch (error) {
                 alert(error);
               }
