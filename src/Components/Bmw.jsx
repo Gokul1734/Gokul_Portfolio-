@@ -1,16 +1,16 @@
 import React from "react";
 import "./Bmw.css";
 
-const Bmw = () => {
+const Bmw = (props) => {
   const width = window.screen.width;
   return (
     <svg
-      width={width + 1200}
+      width={props.screen == "mobile" ? width : width + 1200}
       height="400"
-      viewBox={`0 0 ${width + 1200} 2`}
+      viewBox={`0 0 ${props.screen == "mobile" ? width : width + 1200} 2`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="Carsvg"
+      className={`Carsvg ${props.screen}Car`}
       // style={{ display: "none" }}
     >
       <g id="BMW">
