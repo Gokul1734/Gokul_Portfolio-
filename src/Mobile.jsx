@@ -32,7 +32,7 @@ const Mobile = () => {
           className="img rounded-full w-244 h-244  items-center justify-center"
         ></motion.div>
         <div className="flex flex-col gap-10 justify-center items-center">
-          <Bmw />
+          <Bmw screen="mobile"/>
           <Name id="mobile" mb="5" />
           <motion.h2
             whileHover={{ scale: 1.1 }}
